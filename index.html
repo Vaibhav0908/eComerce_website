@@ -1,0 +1,3587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/grocery16.jpg">
+    <title>Ecommerce Grocery Mart Project</title>
+    <link rel="stylesheet" href="links/bootstrap.min.css">
+    <link rel="stylesheet" href="../../FrontEnd/CSS/css/all.min.css">
+    <script src="links/jquery-3.7.1.min.js"></script>
+    <script src="links/bootstrap.min.js"></script>
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        .user,
+        .search {
+            color: black;
+        }
+
+        .bag {
+            color: red;
+            background-color: rgb(244, 237, 237);
+        }
+
+        .moon {
+            color: white;
+        }
+
+        .moon:hover {
+            color: red;
+        }
+
+        .nav1 a {
+            color: white;
+        }
+
+        .nav1,
+        .newsletter {
+            background-color: rgb(68, 68, 234);
+        }
+
+        .sticky_morning {
+            background-color: white;
+        }
+
+        .sticky_night {
+            background-color: rgb(68, 68, 234);
+        }
+
+        .sticky_morning a {
+            color: black;
+        }
+
+        .sticky_morning a:hover {
+            text-decoration: underline;
+        }
+
+        .sticky_morning_moon:hover {
+            color: red;
+        }
+
+        .email {
+            width: 250px;
+            padding: 6px;
+            border-radius: 20px 0px 0px 20px;
+            margin-top: 20px;
+        }
+
+        .plane {
+            color: white;
+            width: 60px;
+            text-align: center;
+            background-color: rgb(192, 0, 0);
+            border-radius: 0px 20px 20px 0px;
+            transition: all 1.2s;
+            padding: 12px 15px;
+        }
+
+        .plane:hover {
+            background-color: rgb(68, 68, 234);
+            transition: all 1.2s;
+        }
+
+        .img1 {
+            position: absolute;
+        }
+
+        /* .para1{
+position: absolute;
+margin: 200px 0px 0px 100px;
+} */
+
+        /* .img2 {
+
+position: relative; 
+z-index: -10px;
+margin: 200px 800px;
+}*/
+
+
+        /* .inside_img {
+position: relative;
+height: 500px;
+margin: 300px 0px 0px 0px;
+} */
+
+        .background {
+            background-image: url("images/slider1.jpg");
+            width: 100%;
+            margin-bottom: 20px;
+            background-repeat: no-repeat;
+        }
+
+        .img_content {
+            margin: 100px 0px 0px 0px;
+            position: relative;
+        }
+
+        .img_img {
+            margin: 100px 0px 0px 0px;
+            position: relative;
+        }
+
+        .packet1:hover {
+            content: url("images/gback1.png");
+        }
+
+        .packet2:hover {
+            content: url("images/gback2.png");
+        }
+
+        .packet3:hover {
+            content: url("images/gback3.png");
+        }
+
+        .packet4:hover {
+            content: url("images/gback4.png");
+        }
+
+        .packet5:hover {
+            content: url("images/gback5.png");
+        }
+
+        .packet6:hover {
+            content: url("images/gback6.png");
+        }
+
+        .packet7:hover {
+            content: url("images/gback7.png");
+        }
+
+        .packet8:hover {
+            content: url("images/gback8.png");
+        }
+
+        li:hover {
+            border-bottom: 1px solid white;
+        }
+
+        /* .parent{
+            display: block;
+        } */
+
+        .parent img {
+            overflow: hidden;
+            box-sizing: border-box;
+            display: block;
+            position: relative;
+            transition: 1.2s;
+        }
+
+        .parent:hover img {
+            transform: scale(1.1);
+            background-size: cover;
+        }
+
+        .organic_food_img {
+            position: relative;
+        }
+
+        .offer {
+            position: absolute;
+            margin: -300px 0px 0px 0px;
+        }
+
+        .organic_food {
+            margin-left: 200px;
+        }
+
+        .organic_food1 {
+            position: absolute;
+            margin: -200px 0px 0px 0px;
+        }
+
+        .organic_food2 {
+            position: absolute;
+            margin: -200px 0px 0px 0px;
+        }
+
+        /* .organic_food1{
+position: relative;
+margin: 150px 0px 0px 500px;
+}
+.organic_food2{
+position: relative;
+margin: 200px 0px 0px 1150px;
+}
+
+.offer{
+position: relative;
+margin: 50px 0px 0px 550px;
+}  */
+
+        .menubutton {
+            width: 20px;
+            height: 20px;
+            font-weight: bolder;
+            color: red;
+        }
+
+        .add_to_cart:hover {
+            background-color: rgb(68, 68, 234);
+            color: white;
+        }
+
+        .social_clr {
+            padding: 12px;
+            font-size: larger;
+            background-color: rgb(234, 232, 232);
+            color: black;
+        }
+
+        .social_clr:hover {
+            transition: 0.3s;
+            background-color: rgb(68, 68, 234);
+            color: white;
+        }
+
+        .follow_us,
+        .w3layouts {
+            color: rgb(68, 68, 234);
+        }
+
+        .contact i {
+            color: rgb(68, 68, 234);
+            background-color: rgb(234, 232, 232);
+        }
+
+        .specialdeals_img1,
+        .specialdeals_img2,
+        .specialdeals_img3 {
+            position: relative;
+        }
+
+        .specialdeals1,
+        .specialdeals2 {
+            position: absolute;
+            margin: -200px 0px 0px 0px;
+        }
+
+        .specialdeals3 {
+            position: absolute;
+            margin: -680px 0px 0px 1100px;
+        }
+
+        .playbutton_img {
+            position: relative;
+        }
+
+        .playbutton {
+            position: absolute;
+            margin: -400px 0px 0px 370px;
+            width: 80%;
+        }
+
+        .brand {
+            filter: grayscale(100%);
+        }
+
+        .brand:hover {
+            filter: grayscale(0%);
+        }
+
+        .packet_img {
+            background-color: rgb(221, 217, 217);
+        }
+
+        .lady_finger:hover .lady_finger_img,
+        .brinjal:hover .brinjal_img,
+        .palak:hover .palak_img,
+        .packet:hover .packet_img {
+            /* background-color: gray; */
+            background: linear-gradient(45deg, red, black);
+            border-radius: 10px;
+            transition: 1.1s;
+            transform: rotate(10deg);
+        }
+
+        .form {
+            display: none;
+            margin: 200px 0px 0px 400px;
+            position: fixed;
+            padding: 20px;
+            background-color: white;
+            width: 50%;
+            height: auto;
+            z-index: 100000;
+            border-radius: 5px;
+        }
+
+        .form input {
+            width: 100%;
+            border: none;
+            background-color: rgb(242, 242, 242);
+            padding: 15px 10px;
+            border-radius: 10px;
+        }
+
+        .block_div1 {
+            height: 4300px;
+            background-color: rgb(219, 238, 238);
+            position: fixed;
+            z-index: 10000;
+            opacity: 0.4;
+            display: none;
+        }
+
+        .login {
+            background-color: rgb(68, 68, 234);
+            color: white;
+            font-size: large;
+        }
+
+        .login:hover {
+            color: white;
+        }
+
+        .register {
+            color: rgb(68, 68, 234);
+            font-size: large;
+        }
+
+        .register:hover {
+            color: rgb(68, 68, 234);
+        }
+
+        .signin {
+            background-color: rgb(68, 68, 234);
+            font-size: large;
+        }
+
+        .name,
+        .confirm_password,
+        .create_account {
+            display: none;
+        }
+
+        .text_color {
+            color: rgb(59, 59, 59);
+        }
+
+        .text_color:hover {
+            transition: 1.2s;
+            color: rgb(68, 68, 234);
+        }
+
+        .blank {
+            height: 50px;
+        }
+
+        .top_product {
+            padding-top: 50px;
+        }
+
+        .icon_bg {
+            background-color: rgb(253, 244, 244);
+        }
+
+        .search_bar {
+            display: none;
+            margin: 350px 0px 0px 500px;
+            position: fixed;
+            z-index: 1000;
+            width: 40%;
+        }
+
+        .search_bar .keyword {
+            width: 80%;
+            padding: 20px;
+            border-radius: 10px 0px 0px 10px;
+            font-size: 30px;
+            border: none;
+        }
+
+        .search_bar .keyword_search {
+            padding: 30px 20px 27px 20px;
+            font-size: 30px;
+            border-radius: 0px 10px 10px 0px;
+        }
+
+        .search_close {
+            display: none;
+            margin: 30px 0px 0px 1330px;
+            font-size: 40px;
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .search_close:hover {
+            cursor: pointer;
+        }
+
+        .block_div2 {
+            display: none;
+            background-color: rgb(68, 68, 68);
+            position: fixed;
+            z-index: 100;
+            opacity: 0.8;
+            height: 4950px;
+        }
+
+        .shopping_cart {
+            display: none;
+            background-color: white;
+            margin: 130px 0px 0px 1030px;
+            position: fixed;
+            width: 28%;
+            z-index: 10000;
+            border-radius: 5px;
+            box-shadow: 0px 0px 12px rgb(118, 118, 118);
+        }
+
+        .shopping {
+            width: 100%;
+            margin-left: 22%;
+            padding: 5px;
+            color: red;
+        }
+
+        .shopping_cart_close {
+            margin-left: 80px;
+            color: black;
+            font-size: 25px;
+        }
+
+        .shopping_cart_close:hover {
+            cursor: pointer;
+        }
+
+        .line2 {
+            display: none;
+        }
+
+        .vegetable {
+            padding: 10px;
+            background-color: rgb(228, 28, 48);
+            color: white;
+            border-radius: 5px;
+        }
+
+        .vegetable:hover {
+            color: white;
+        }
+
+        .sidebar {
+            position: fixed;
+            width: 100px;
+            margin: 100px 0px 0px 1420px;
+            border-radius: 10px 0px 0px 10px;
+            background-color: black;
+            z-index: 1000;
+        }
+
+        .arrow1 {
+            position: fixed;
+            z-index: 1000;
+            color: white;
+            margin: 600px 0px 0px 1430px;
+        }
+
+        .eye {
+            display: none;
+            color: black;
+            padding: 15px 10px;
+            background-color: rgb(195, 186, 186);
+        }
+
+        .user {
+            background-color: white;
+        }
+
+        .pages:hover {
+            color: gray;
+        }
+
+        .packet_content {
+            display: none;
+            position: fixed;
+            /* background-color: white; */
+            margin: 200px 0px 0px 350px;
+            border-radius: 10px;
+            z-index: 10000;
+        }
+
+        .packet_content .add_to_cart1:hover {
+            color: white;
+            background-color: rgb(68, 68, 234);
+        }
+
+        .close1:hover {
+            cursor: pointer;
+        }
+
+        .background_eye {
+            background-image: url("images/vision-icon.jpg");
+            width: 20%;
+        }
+
+        .product1_block {
+            display: none;
+        }
+
+        .product1_block a {
+            color: black;
+        }
+
+        .product2_block {
+            display: none;
+        }
+
+        .about_us_block {
+            display: none;
+        }
+
+        .blog_post_block {
+            display: none;
+        }
+
+        .blog_single_block {
+            display: none;
+        }
+
+        .single_page_block {
+            display: none;
+        }
+
+        .faqs_block {
+            display: none;
+        }
+
+        .contact_us_block {
+            display: none;
+        }
+
+        .meat_content {
+            display: none;
+        }
+
+        .bakery_content {
+            display: none;
+        }
+
+        .beverages_content {
+            display: none;
+        }
+
+        .contact_input {
+            width: 80%;
+            background-color: rgb(245, 244, 244);
+            border-radius: 8px;
+        }
+
+        .send_message {
+            background-color: rgb(241, 49, 87);
+            border: 1px solid rgb(241, 49, 87);
+            border-radius: 10px;
+            padding: 10px 25px;
+            color: white;
+            margin-bottom: 100px;
+        }
+
+        .contact_icon {
+            color: black;
+        }
+
+        .contact_icon:hover {
+            color: red;
+        }
+
+        .body_color_night {
+            background-color: rgb(3, 3, 65);
+        }
+
+        .product_background_night {
+            background-color: rgb(2, 2, 42);
+        }
+
+        .night_mode_for_night {
+            color: white;
+        }
+
+        .user_night {
+            color: white;
+        }
+
+        .bag_night {
+            background-color: rgb(19, 19, 65);
+        }
+
+        .add_to_cart_night {
+            color: white;
+            border: 1px solid white;
+        }
+
+        .icon_bg_night {
+            background-color: rgb(3, 3, 65);
+        }
+
+        .location_night {
+            background-color: rgb(20, 20, 61);
+        }
+
+        .social_clr_night {
+            color: white;
+        }
+
+        .packet_img_night {
+            background-color: rgb(1, 1, 32);
+        }
+
+        .carousel_slider_night {
+            background-color: white;
+        }
+
+        .contact_icon_night {
+            color: white;
+        }
+
+        .carousel-inner .carousel-item.active,
+        .carousel-inner .carousel-item-next,
+        .carousel-inner .carousel-item-prev {
+            display: flex;
+        }
+
+
+        @media screen and (max-width:768px) {
+            .head h1 {
+                font-size: 30px;
+            }
+
+            .head p {
+                font-size: small;
+            }
+
+            /* .head a,
+            .head a li {
+                font-size: 10px;
+            } */
+
+            .background .para1 {
+                margin-top: -200px;
+            }
+
+            .background .head1 {
+                font-size: 30px;
+            }
+
+            .playbutton {
+                margin: -700px 0px 0px 180px;
+                width: 200%;
+            }
+
+            .heading {
+                font-size: small;
+            }
+
+            /* .sidebar{
+                margin-left: 300px;
+            }
+
+            .arrow1{
+                margin-left: 300px;   
+            } */
+
+        }
+
+        /*@media screen and (min-width:768px) {
+            .wraper div{
+                font-size: small;
+            }
+        }*/
+    </style>
+
+</head>
+
+<body>
+    <div class="form ">
+        <form action="#">
+            <div class="text-right close"><a href="#" class="text-muted"
+                    style="text-decoration: none;font-size: 30px;">&Cross;</a></div>
+            <button class="btn  login"><b>LOGIN</b></button>
+            <button class="btn  register"><b>REGISTER</b></button>
+            <input type="text" placeholder="Name" class="name icon_bg mt-4 night_mode">
+            <input type="email" placeholder="Email Address" class="mb-3 mt-3 email icon_bg night_mode">
+            <input type="password" placeholder="Password" class="mb-3 password icon_bg night_mode">
+            <input type="password" placeholder="Confirm Password" class="mb-3 confirm_password icon_bg night_mode">
+            <button class="btn pl-5 pr-5 mt-3 text-white signin"><b>SIGN IN</b></button>
+            <button class="btn pl-5 pr-5 mt-4 text-white signin create_account"><b>CREATE ACCOUNT</b></button>
+        </form>
+    </div>
+
+    <div class="search_close text-white">&Cross;</div>
+
+    <div class="search_bar">
+        <input type="text" placeholder="Enter Keyword..." class="keyword"><a href="#"
+            style="text-decoration: none;"><b><i class="fas fa-search bg-danger text-white keyword_search"></i></b></a>
+    </div>
+
+    <div class="shopping_cart icon_bg">
+        <span class="shopping mt-2">Your shopping cart is empty</span>
+        <span class="p-1 border border-muted night_mode plus">+</span> 
+        <span class="p-1 border border-muted night_mode minus">-</span>
+        <span class="shop_price text-danger"></span> 
+        <span class="shopping_cart_close night_mode">&Cross;</span>
+    </div>
+
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 lady_finger_content bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/grocery11.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Ladies Finger 500g</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$302</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 brinjal_content bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/grocery12.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Brinjal long 500g</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$200</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 palak_content bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/grocery13.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Palak 250g</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$100</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 packet1_content bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/grocery17.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">ProV Pistachios</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$500</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 packet2_content bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/grocery18.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Himalayan Cashews</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$370</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 packet3_content bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/grocery19.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Kernels Walnuts</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$100</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 packet4_content bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/grocery20.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Himalayan Almonds</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$250</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 packet5_content bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/gfront5.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Yellow Arahar Dal</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$30</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 packet6_content bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/grocery22.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger close1">Tata Sampann Poha</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$170</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 packet7_content bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/gfront7.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Lay's Onion Chips</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$10</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 packet8_content bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/grocery24.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Cadbury Dairy Milk</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$200</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 meat1_content  bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/meatfront1.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Cadbury Dairy Milk</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$200</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 meat2_content  bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/meatfront2.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Cadbury Dairy Milk</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$200</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 meat3_content  bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/meatfront3.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Cadbury Dairy Milk</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$200</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 bakery1_content  bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/bakery1.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Cadbury Dairy Milk</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$200</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 bakery2_content  bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/bakery2.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Cadbury Dairy Milk</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$200</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 bakery3_content  bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/bakery3.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Cadbury Dairy Milk</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$200</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 beverages1_content  bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/beverages1.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Cadbury Dairy Milk</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$200</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 beverages2_content  bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/beverages2.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Cadbury Dairy Milk</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$200</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-0 p-0">
+        <div class="col-lg-6 beverages3_content  bg-white packet_content">
+            <div class="text-muted text-right close1" style="font-size: 30px;">&Cross;</div>
+            <div class="row">
+                <div class="col-4 m-0 pl-5">
+                    <img src="images/beverages3.png" alt="" width="100%">
+                </div>
+                <div class="col-8 pl-5">
+                    <h2 class="text-danger ">Cadbury Dairy Milk</h2>
+                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation <br>ullamco laboris nisi ut
+                        aliquip ex ea
+                        commodo <br>consequat.Duis aute irure dolor in reprehenderit in <br>voluptate velit esse cillum
+                        dolore eu fugiat nulla <br>pariatur.</p>
+                    <p class="m-0 p-0" style="cursor: pointer;"><span
+                            class="text-primary">&star;&star;&star;</span><span class="text-muted">&star;&star;</span>
+                    </p>
+                    <p class=""><span class="" style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                        &nbsp;
+                        <big class="add_price"><b><i>$200</i></b></big>
+                    </p>
+                    <div class=""><button class="pl-3 pr-3 p-1 mb-5 rounded-lg add_to_cart1 night_mode">Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluids m-0 p-0 wraper">
+        <div class="col-12 block_div1"></div>
+        <div class="row m-0 p-0 ">
+            <div class="col-1 sidebar">
+                <a href="#" style="text-decoration: none;">
+                    <p class="text-light text-center p-3 mb-4 h3" style="border-bottom: 2px solid white;">
+                        <big><b>>></b></big>
+                    </p>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <p class="text-light text-center pb-3" style="border-bottom: 2px solid white;">Back</p>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <p class="text-light text-center pb-3" style="border-bottom: 2px solid white;">Download</p>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <p class="text-light text-center pb-3" style="border-bottom: 2px solid white;">Buy</p>
+                </a>
+            </div>
+        </div>
+        <div class="row m-0 p-0">
+            <div class="col-lg-1 arrow1">
+                <b><i class="fas fa-level-up-alt arrow p-3 bg-danger border border-danger rounded-circle"></i></b>
+            </div>
+        </div>
+        <div class="row m-0 p-0 head ">
+            <div class="col-12 block_div2"></div>
+            <div class="col-3 text-center mt-4"><a href="#" style="text-decoration: none;"><big><i
+                            class="fas fa-user user border rounded-circle p-3 icon_bg"></i></big></a>
+            </div>
+            <div class="col-6 mt-3 text-center">
+                <h1 class="night_mode"><small><b>Grocery Mart</b></small></h1>
+                <p class="night_mode"><small>ONLINE GROCERY SHOPING</small></p>
+            </div>
+            <div class="col-3 text-center mt-4"><a href="#" style="text-decoration: none;"><big><i
+                            class="fas fa-search search night_mode"></i></big>
+                </a> &nbsp;&nbsp;<a href="#" style="text-decoration: none;"><big><i
+                            class="fas fa-shopping-bag rounded-circle p-3 bag"></i></big></a>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-md sticky-top text-center p-3 nav1">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-6 col-10 text-left">
+                <button class="navbar-toggler bg-danger p-1" data-toggle="collapse" data-target="#menu">
+                    <span class="navbar-toggler-icon menubutton"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item"><a href="#"
+                                class="nav-link border-white border-bottom m-0 home1"><b>HOME</b></a></li>
+                        &nbsp;&nbsp;
+                        <li class="nav-item dropdown"><a href="#" class="nav-link  dropdown-toggle"
+                                data-toggle="dropdown"><b>PRODUCTS</b></a>
+                            <div class="dropdown-menu">
+
+                                <div class="row m-0 p-0">
+                                    <div class="col-lg-3 m-0 p-0">
+                                        <div class="row m-0 p-0">
+                                            <div class="col-12">
+                                                <h4>Kitchen</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <ul type="none">
+                                                    <li class="nav-item"><a href="#"
+                                                            class="nav-link text-black text-dark product1">Meat
+                                                            and Seafood</a></li>
+                                                    <li class="nav-item"><a href="#"
+                                                            class="nav-link text-black text-dark product1">Snake
+                                                            Foods</a></li>
+                                                    <li class="nav-item"><a href="#"
+                                                            class="nav-link text-black text-dark product1">Oils,
+                                                            Vinegars</a></li>
+                                                    <li class="nav-item"><a href="#"
+                                                            class="nav-link text-black text-dark product1">Pasta
+                                                            & Noodles</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <h4>Household</h4>
+                                        <ul type="none">
+                                            <li class="nav-item"><a href="#"
+                                                    class="nav-link text-black text-dark product2">Meat
+                                                    and Seafood</a></li>
+                                            <li class="nav-item"><a href="#"
+                                                    class="nav-link text-black text-dark product2">Snake
+                                                    Foods</a></li>
+                                            <li class="nav-item"><a href="#"
+                                                    class="nav-link text-black text-dark product2">Oils,
+                                                    Vinegars</a></li>
+                                            <li class="nav-item"><a href="#"
+                                                    class="nav-link text-black text-dark product2">Pasta
+                                                    & Noodles</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div><img src="images/grocery25.png" alt=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        &nbsp;&nbsp;
+                        <li class="nav-item"><a href="#" class="nav-link about_us"><b>ABOUT US</b></a></li>
+                        &nbsp;&nbsp;
+                        <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle"
+                                data-toggle="dropdown"><b>PAGES</b></a>
+                            <div class="dropdown-menu in_dropdown icon_bg">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <ul type="none">
+                                            <li class="nav-item"><a href="#"
+                                                    class="nav-link night_mode pages blog_page1"
+                                                    style="color: red;">Blog Posts</a>
+                                            </li>
+                                            <li class="nav-item"><a href="#"
+                                                    class="nav-link text-left night_mode pages blog_page2"
+                                                    style="color: red;">Blog
+                                                    Single</a></li>
+                                            <li class="nav-item"><a href="#"
+                                                    class="nav-link text-left night_mode pages blog_page3"
+                                                    style="color: red;">Single</a>
+                                            </li>
+                                            <li class="nav-item"><a href="#"
+                                                    class="nav-link text-left night_mode pages blog_page4"
+                                                    style="color: red;">FAQ's</a></li>
+                                            <li class="nav-item"><a href="#"
+                                                    class="nav-link text-left night_mode pages blog_page5"
+                                                    style="color: red;">ShortCodes</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>&nbsp;&nbsp;
+                        <li class="nav-item"><a href="#" class="nav-link contact_us"><b>CONTACT US</b></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-2 text-left m-0 p-0">
+                <b><a href="#"><big><i class="far fa-moon moon"></i></big></a></b>
+            </div>
+        </nav>
+        <div class="home">
+            <div class="row m-0 p-0 mb-5">
+                <div class="col-12 m-0 p-0">
+                    <!-- <img src="images/grocery1.jpg" class="img1" alt="" width="100%" height="450px"> -->
+                    <img src="images/slider2.jpg" class="img1" alt="" width="100%" height="600px">
+                </div>
+            </div>
+            <br><br><br><br><br>
+            <div class="row m-0 p-0 background mb-5">
+                <div class="col-lg-1"></div>
+                <div class="col-md-5 img_content">
+                    <div class="row inside_img">
+                        <div class="col-12">
+                            <p class="para1 text-white">START YOUR DAILY ONLINE SHOPPING!</p>
+                            <p class="head1 text-white h1"><big><b>Stay home & we will <br>deliver your daily
+                                        need's</b></big></p><br>
+                            <br>
+                            <button class="btn btn-danger p-3"><b>Shop Now</b></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <img src="images/grocery9.png" id="img2" alt="" class="mb-5" width="100%">
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+            <br><br><br><br><br><br>
+
+            <div class="row m-0 p-0">
+                <div class="col-1"></div>
+                <!-- <div class="col-5  background">
+                <div>
+                <a href="../../movies/Jayanti.2021.1080p.AMZN.WEB-DL.DDP5.1.HEVC-ShiNobi.mkv_(1).mp4"><img
+                        src="../../FrontEnd/Img_Vid_Aud/playbutton.png" class="playbutton" alt="" width="100%"></a>
+                </div>
+                </div> -->
+                <div class="col-md-5 mb-5"><img src="images/grocery2.avif" class="rounded-lg playbutton_img" alt=""
+                        width="100%">
+                </div>
+                <div class="col-md-5">
+                    <div class="row mb-5 p-0">
+                        <div class="col-md-3 col-4 text-center"><big><a href="#" class="night_mode vegetable"
+                                    style="text-decoration: none;">VEGETABLES</a></big></div>
+                        <div class="col-5 text-center"><big><a href="#" class="night_mode meats"
+                                    style="text-decoration: none; color: black;">MEATS & SEAFOOD</a></big></div>
+                        <div class="col-2 text-center"><big><a href="#" class="night_mode bakery"
+                                    style="text-decoration: none; color: black;">BAKERY</a></big>
+                        </div>
+                        <div class="col-md-2 col-3 text-center"><big><a href="#" class="night_mode beverages"
+                                    style="text-decoration: none; color: black;">BEVERAGES</a></big></div>
+                    </div>
+                    <div class="row m-0 p-0">
+                        <div class="col-4 lady_finger">
+                            <div class="vegetable_content image_bg"><img src="images/grocery11.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span> &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="meat_content image_bg"><img src="images/meatfront1.png"
+                                    class="rounded-top lady_finger_img packet_img" alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye12"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span> &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="bakery_content image_bg"><img src="images/bakery1.png"
+                                    class="rounded-top lady_finger_img packet_img" alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye15"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span> &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="beverages_content image_bg"><img src="images/beverages1.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye18"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span> &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-4 brinjal image_bg">
+                            <div class="vegetable_content"><img src="images/grocery12.png" alt=""
+                                    class="rounded-top brinjal_img packet_img" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye2"></i></a>
+                                <p class="text-center text-danger"><b>BRINJAL LONG 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$250</span> &nbsp;
+                                    <big class="price"><b><i>$200</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="meat_content image_bg"><img src="images/meatfront2.png" alt=""
+                                    class="rounded-top brinjal_img packet_img" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye13"></i></a>
+                                <p class="text-center text-danger"><b>BRINJAL LONG 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$250</span> &nbsp;
+                                    <big class="price"><b><i>$200</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg">Add
+                                        To
+                                        Cart</button>
+                                </div>
+
+                            </div>
+                            <div class="bakery_content image_bg"><img src="images/bakery2.png" alt=""
+                                    class="rounded-top brinjal_img packet_img" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye16"></i></a>
+                                <p class="text-center text-danger"><b>BRINJAL LONG 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$250</span> &nbsp;
+                                    <big class="price"><b><i>$200</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="beverages_content image_bg"><img src="images/beverages2.png" alt=""
+                                    class="rounded-top brinjal_img packet_img" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye19"></i></a>
+                                <p class="text-center text-danger"><b>BRINJAL LONG 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$250</span> &nbsp;
+                                    <big class="price"><b><i>$200</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-4 palak image_bg">
+                            <div class="vegetable_content"><img src="images/grocery13.png" alt=""
+                                    class="rounded-top palak_img packet_img" width="100%"><br>
+                                <a href="#" style="text-decoration: none;" class=""><i
+                                        class="far fa-eye eye eye3"></i></a>
+                                <p class="text-center text-danger"><b>PALAK 250g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$120</span> &nbsp;
+                                    <big class="price"><b><i>$100</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="meat_content image_bg"><img src="images/meatfront3.png" alt=""
+                                    class="rounded-top palak_img packet_img" width="100%"><br>
+                                <a href="#" style="text-decoration: none;" class=""><i
+                                        class="far fa-eye eye eye14"></i></a>
+                                <p class="text-center text-danger"><b>PALAK 250g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$120</span> &nbsp;
+                                    <big class="price"><b><i>$100</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="bakery_content image_bg"><img src="images/bakery3.png" alt=""
+                                    class="rounded-top palak_img packet_img" width="100%"><br>
+                                <a href="#" style="text-decoration: none;" class=""><i class="far fa-eye eye eye17
+                                        "></i></a>
+                                <p class="text-center text-danger"><b>PALAK 250g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$120</span> &nbsp;
+                                    <big class="price"><b><i>$100</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="beverages_content image_bg"><img src="images/beverages3.png" alt=""
+                                    class="rounded-top palak_img packet_img" width="100%"><br>
+                                <a href="#" style="text-decoration: none;" class=""><i
+                                        class="far fa-eye eye eye20"></i></a>
+                                <p class="text-center text-danger"><b>PALAK 250g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$120</span> &nbsp;
+                                    <big class="price"><b><i>$100</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <br><br><br><br><br>
+            <div class="row m-0 p-0">
+                <div class="col-1">
+                    <a href="images/Jayanti.2021.1080p.AMZN.WEB-DL.DDP5.1.HEVC-ShiNobi.mkv_(1).mp4"><img
+                            src="images/playbutton.png" class="playbutton" alt="" width="100%"></a>
+                </div>
+            </div>
+
+            <div class="row m-0 p-0">
+                <div class="col-md-7 m-0 p-0">
+                    <div class="row m-0 p-0">
+                        <div class="col-12 m-0 p-0">
+                            <img src="images/grocery7.avif" alt="" width="100%" height="400px" class="organic_food_img">
+                        </div>
+                    </div>
+                    <div class="row offer">
+                        <div class="col-12 ml-4 p-0 text-center">
+                            <span class="h3 border border-primary rounded-circle bg-primary p-4 text-white">20%
+                                off</span><br><br>
+                            <p class="h4">Summer Offer</p>
+                        </div>
+                    </div>
+                    <div class="row organic_food1">
+                        <div class="col-12 text-center ml-4 p-0 organic_food">
+                            <p class="text-dark"><i>Free Delivery</i></p>
+                            <h3 class="text-danger"><b>20% <i>Cashback</b></i></h3>
+                            <p class="text-danger"><small><b>SHOP NOW</small><big>&RightArrow;</big></b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 m-0 p-0">
+                    <div class="row m-0 p-0">
+                        <div class="col-12 m-0 p-0">
+                            <img src="images/grocery8.avif" alt="" width="100%" height="400px" class="organic_food_img">
+                        </div>
+                    </div>
+                    <div class="row organic_food2">
+                        <div class="col-12 text-center">
+                            <span class="bg-dark text-white border border-white rounded-lg ml-5 p-3"><b>ORGANIC
+                                    FOODS</b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br>
+
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 m-0 p-0 text-center">
+                    <span
+                        class="text-danger"><small>&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;</small></span>
+                    <span class="text-center h2 night_mode"><b>Special Deals</b></span>
+                </div>
+            </div><br><br><br>
+            <div class="row m-0 p-0 mb-5">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6 col-sm-6 right">
+                    <div class="parent">
+                        <div class="row m-0 p-0">
+                            <div class="col-12"><img src="images/grocery14.jpg" class="rounded-lg specialdeals_img1"
+                                    alt="" width="100%"></div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row m-0 p-0">
+                        <div class="col-lg-12">
+                            <p class="h1 specialdeals1 text-white col-lg-12 col-md-10 col-sm-8"><b>WE OFFER
+                                    <br>&nbsp;&nbsp;&nbsp; BEST PRODUCTS</b></p>
+                        </div>
+                    </div>
+                    <div class="parent">
+                        <div class="row m-0 p-0">
+                            <div class="col-12"><img src="images/grocery15.jpg" class="rounded-lg specialdeals_img2"
+                                    alt="" width="100%"></div>&nbsp;
+                        </div>
+                    </div>
+                    <div class="row m-0 p-0">
+                        <div class="col-lg-12">
+                            <p class="h1 specialdeals2 text-white col-lg-12 col-md-10 col-sm-8"><b>BEST STORE
+                                    <br>&nbsp;&nbsp;&nbsp; FOR GROCERIES</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 left specialdeals_img3"><img src="images/grocery16.jpg" class="rounded-lg"
+                        alt="" width="100%" height="97%">
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+            <!-- <div class="row m-0 p-0">
+            <div class="col-lg-12">
+                <p class="h1 specialdeals3 text-white col-lg-12 col-md-10 col-sm-8">BIG<b>  DEALS</b><br><b class="text-danger">&nbsp;&nbsp;&nbsp;SAVE UP</b><br><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TO</small><br>
+                    <b class="text-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30%</b></p>
+            </div>
+            </div> -->
+            <br><br>
+            <div class="row m-0 p-0 mt-5">
+                <div class="col-12 text-center product_background top_product">
+                    <span
+                        class="text-danger"><small>&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;</small></span>
+                    <span class="text-center h2 night_mode"><b>Top Products</b></span>
+                </div>
+            </div>
+            <!-- <br> -->
+            <div class="col-12 product_background blank"></div>
+            <div class="row m-0 p-0 product_background">
+                <div class="col-12 mb-5">
+                    <div class="row m-0 p-0">
+                        <div class="col-2"></div>
+                        <div class="col-md-2 col-sm-4 packet image_bg">
+                            <div><img src="images/grocery17.png" class="rounded-top packet1 packet_img " alt=""
+                                    width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye4"></i></a>
+                                <p class="text-danger text-center"><b><big>ProV Pistachios</big></b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$520</span> &nbsp;
+                                    <big><b><i>$500</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart product_background">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 packet image_bg">
+                            <div><img src="images/grocery18.png" class="rounded-top packet2 packet_img " alt=""
+                                    width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye5"></i></a>
+                                <p class="text-danger text-center"><b><big>Himalayan Cashews</big></b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$380</span> &nbsp;
+                                    <big><b><i>$370</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart product_background">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 packet image_bg">
+                            <div><img src="images/grocery19.png" class="rounded-top packet3 packet_img " alt=""
+                                    width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye6"></i></a>
+                                <p class="text-danger text-center"><b><big>Kernels Walnuts</big></b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$150</span> &nbsp;
+                                    <big><b><i>$100</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart product_background">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 packet image_bg">
+                            <div><img src="images/grocery20.png" class="rounded-top packet4 packet_img " alt=""
+                                    width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye7"></i></a>
+                                <p class="text-danger text-center"><b><big>Himalayan Almonds</big></b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$280</span> &nbsp;
+                                    <big><b><i>$250</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart product_background">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div><br>
+                    <div class="row m-0 p-0">
+                        <div class="col-2"></div>
+                        <div class="col-md-2 col-sm-4 packet image_bg">
+                            <div><img src="images/gfront5.png" class="rounded-top packet5 packet_img " alt=""
+                                    width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye8"></i></a>
+                                <p class="text-danger text-center"><b><big>Yellow Arahar Dal</big></b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$40</span> &nbsp;
+                                    <big><b><i>$30</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart product_background">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 packet image_bg">
+                            <div><img src="images/grocery22.png" class="rounded-top packet6 packet_img " alt=""
+                                    width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye9"></i></a>
+                                <p class="text-danger text-center"><b><big>Tata Sampann Poha</big></b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$280</span> &nbsp;
+                                    <big><b><i>170</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart product_background">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 packet image_bg">
+                            <div><img src="images/gfront7.png" class="rounded-top packet7 packet_img " alt=""
+                                    width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye10"></i></a>
+                                <p class="text-danger text-center"><b><big>Lay's Onion Chips</big></b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$20</span> &nbsp;
+                                    <big><b><i>$10</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart product_background">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 packet image_bg">
+                            <div><img src="images/grocery24.png" class="rounded-top packet8 packet_img " alt=""
+                                    width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye11"></i></a>
+                                <p class="text-danger text-center"><b><big>Cadbury Dairy Milk</big></b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$300</span> &nbsp;
+                                    <big><b><i>$200</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart product_background">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+            </div><br><br>
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 text-center pt-5">
+                    <span
+                        class="text-danger"><small>&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;</small></span>
+                    <span class="text-center h2 night_mode"><b>Top Brands</b></span>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 p-4">
+                    <div class="carousel slide" data-bs-ride="carousel" id="myslider">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="col-md-2 col-12">
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <img src="images/topbrand1.png" alt="" width="100%" class="brand">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-2">
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <img src="images/topbrand2.png" alt="" width="100%" class="brand">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-2">
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <img src="images/topbrand3.png" alt="" width="100%" class="brand">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-2">
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <img src="images/topbrand4.png" alt="" width="100%" class="brand">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-2">
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <img src="images/topbrand5.png" alt="" width="100%" class="brand">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#myslider" class="carousel-control-prev" data-slide="prev">
+                            <span class="carousel-control-prev-icon bg-dark"></span>
+                        </a>
+
+                        <a href="#myslider" class="carousel-control-next" data-slide="next">
+                            <span class="carousel-control-next-icon bg-dark"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product1_block">
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 m-0 p-0">
+                    <img src="images/slider2.jpg" alt="" width="100%" height="300px">
+                </div>
+            </div>
+            <div class="row m-0 p-0 contact_content">
+                <div class="col-lg-12">
+                    <h3>TOP SELLING</h3>
+                    <h2 class="text-danger">KITCHEN PRODUCTS</h2>
+                    <h3>FLAT <i>25% DISCOUNTS</i></h3>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 mb-5 m-0 p-0 ">
+                    <p class="text-center p-3 product_background night_mode"><span class="mr-3"><a href="#"
+                                style="text-decoration: none;" class="home1">Home</a></span><span class="">/</span><span
+                            class="text-muted ml-3">Products1</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-1"></div>
+                <div class="col-lg-3">
+                    <p class="">
+                        <span
+                            class="text-primary night_mode"><small>&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;</small></span>
+                        <span class="h4"><b>Categories</b></span>
+                    </p>
+                    <div class="ml-5 mb-5 pl-5 pr-5 pt-5 pb-3 border">
+                        <p><a href="#" style="text-decoration: none;">Ready Meal & Mixes</a></p>
+                        <p><a href="#" style="text-decoration: none;">Food Combo</a></p>
+                        <p><a href="#" style="text-decoration: none;">Kitchen Tools</a></p>
+                        <p><a href="#" style="text-decoration: none;">Cookware</a></p>
+                        <p><a href="#" style="text-decoration: none;">Outdoor Cooking</a></p>
+                        <p><a href="#" style="text-decoration: none;">Hand Juicers</a></p>
+                        <p><a href="#" style="text-decoration: none;">Chocolates</a></p>
+                        <p><a href="#" style="text-decoration: none;">Dry Fruit, Nut & Seed</a></p>
+                    </div>
+                    <p class="">
+                        <span
+                            class="text-primary"><small>&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;</small></span>
+                        <span class="h4"><b>Brand</b></span>
+                    </p>
+                    <div class="ml-5 mb-5 pl-5 pr-5 pt-5 pb-3 border night_mode">
+                        <p><input type="checkbox"> <a href="#" style="text-decoration: none;">ADILAID</a>
+                        </p>
+                        <p><input type="checkbox"> <a href="#" style="text-decoration: none;">American
+                                Garden</a></p>
+                        <p><input type="checkbox"> <a href="#" style="text-decoration: none;">Being
+                                Bania</a></p>
+                        <p><input type="checkbox"> <a href="#" style="text-decoration: none;">BudhRam</a>
+                        </p>
+                        <p><input type="checkbox"> <a href="#" style="text-decoration: none;">Aachi</a>
+                        </p>
+                        <p><input type="checkbox"> <a href="#" style="text-decoration: none;">Daily
+                                Food</a></p>
+                    </div>
+                    <p class="">
+                        <span
+                            class="text-primary"><small>&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;</small></span>
+                        <span class="h4"><b>Price</b></span>
+                    </p>
+                    <div class="ml-5 pl-5 pr-5 pt-5 pb-3 border">
+                        <p><input type="checkbox"> <a href="#" style="text-decoration: none;">Below $
+                                100</a></p>
+                        <p><input type="checkbox"> <a href="#" style="text-decoration: none;">$
+                                100-500</a></p>
+                        <p><input type="checkbox"> <a href="#" style="text-decoration: none;">$ 1k-10k</a>
+                        </p>
+                        <p><input type="checkbox"> <a href="#" style="text-decoration: none;">$
+                                10k-20k</a></p>
+                        <p><input type="checkbox"> <a href="#" style="text-decoration: none;">$ Above
+                                20k</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-7 pl-5">
+                    <div class="row mb-5">
+                        <div class="col-lg-6 pr-2 mr-0">
+                            <img src="images/product1.jpg" alt="" width="100%" class="rounded-lg"><br>
+                        </div>
+                        <div class="col-lg-6 pl-2 ml-0">
+                            <img src="images/product2.jpg" alt="" width="100%" class="rounded-lg">
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-6">
+                            <p class="h4 night_mode">Showing Results: 0-1</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="text-right"><select
+                                    class="p-2 border border-muted night_mode text-muted rounded-lg">
+                                    <option value="0">Default Sorting</option>
+                                    <option value="1">Sort by popularity</option>
+                                    <option value="2">Sort by average rating</option>
+                                    <option value="3">Sort by newness</option>
+                                    <option value="4">Sort by price: low to high</option>
+                                    <option value="5">Sort by price: high to low</option>
+                                </select>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront1.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront2.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront3.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront4.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront5.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront6.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-5">
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront1.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront2.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront3.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+
+        <div class="product2_block">
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 m-0 p-0">
+                    <img src="images/slider2.jpg" alt="" width="100%" height="300px">
+                </div>
+            </div>
+            <div class="row m-0 p-0 contact_content">
+                <div class="col-lg-12 night_mode">
+                    <h3>DEALS ON</h3>
+                    <h2 class="text-danger">HOUSEHOLD PRODUCTS</h2>
+                    <h3>FLAT <i>25% DISCOUNTS</i></h3>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 mb-5 m-0 p-0 ">
+                    <p class="text-center p-3 product_background night_mode"><span class="mr-3"><a href="#"
+                                style="text-decoration: none;" class="home1">Home</a></span><span class="">/</span><span
+                            class="text-muted ml-3">Products2</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-1"></div>
+                <div class="col-lg-3">
+                    <p class="">
+                        <span
+                            class="text-primary"><small>&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;</small></span>
+                        <span class="h4"><b>Categories</b></span>
+                    </p>
+                    <div class="ml-5 mb-5 pl-5 pr-5 pt-5 pb-3 border">
+                        <p><a href="#" style="color: black; text-decoration: none;">Ready Meal & Mixes</a></p>
+                        <p><a href="#" style="color: black; text-decoration: none;">Food Combo</a></p>
+                        <p><a href="#" style="color: black; text-decoration: none;">Kitchen Tools</a></p>
+                        <p><a href="#" style="color: black; text-decoration: none;">Cookware</a></p>
+                        <p><a href="#" style="color: black; text-decoration: none;">Outdoor Cooking</a></p>
+                        <p><a href="#" style="color: black; text-decoration: none;">Hand Juicers</a></p>
+                        <p><a href="#" style="color: black; text-decoration: none;">Chocolates</a></p>
+                        <p><a href="#" style="color: black; text-decoration: none;">Dry Fruit, Nut & Seed</a>
+                        </p>
+                    </div>
+                    <p class="">
+                        <span
+                            class="text-primary"><small>&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;</small></span>
+                        <span class="h4"><b>Brand</b></span>
+                    </p>
+                    <div class="ml-5 mb-5 pl-5 pr-5 pt-5 pb-3 border">
+                        <p><input type="checkbox"> <a href="#" style="color: black; text-decoration: none;">ADILAID</a>
+                        </p>
+                        <p><input type="checkbox"> <a href="#" style="color: black; text-decoration: none;">American
+                                Garden</a></p>
+                        <p><input type="checkbox"> <a href="#" style="color: black; text-decoration: none;">Being
+                                Bania</a></p>
+                        <p><input type="checkbox"> <a href="#" style="color: black; text-decoration: none;">BudhRam</a>
+                        </p>
+                        <p><input type="checkbox"> <a href="#" style="color: black; text-decoration: none;">Aachi</a>
+                        </p>
+                        <p><input type="checkbox"> <a href="#" style="color: black; text-decoration: none;">Daily
+                                Food</a></p>
+                    </div>
+                    <p class="">
+                        <span
+                            class="text-primary"><small>&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;</small></span>
+                        <span class="h4"><b>Price</b></span>
+                    </p>
+                    <div class="ml-5 pl-5 pr-5 pt-5 pb-3 border">
+                        <p><input type="checkbox"> <a href="#" style="color: black; text-decoration: none;">Below $
+                                100</a></p>
+                        <p><input type="checkbox"> <a href="#" style="color: black; text-decoration: none;">$
+                                100-500</a></p>
+                        <p><input type="checkbox"> <a href="#" style="color: black; text-decoration: none;">$
+                                1k-10k</a>
+                        </p>
+                        <p><input type="checkbox"> <a href="#" style="color: black; text-decoration: none;">$
+                                10k-20k</a></p>
+                        <p><input type="checkbox"> <a href="#" style="color: black; text-decoration: none;">$
+                                Above
+                                20k</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-7 pl-5">
+                    <div class="row mb-5">
+                        <div class="col-lg-6 pr-2 mr-0">
+                            <img src="images/product3.jpg" alt="" width="100%" class="rounded-lg"><br>
+                        </div>
+                        <div class="col-lg-6 pl-2 ml-0">
+                            <img src="images/product4.jpg" alt="" width="100%" class="rounded-lg">
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-6">
+                            <p class="h4 night_mode">Showing Results: 0-1</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="text-right"><select class="p-2 border border-muted text-muted rounded-lg">
+                                    <option value="0">Default Sorting</option>
+                                    <option value="1">Sort by popularity</option>
+                                    <option value="2">Sort by average rating</option>
+                                    <option value="3">Sort by newness</option>
+                                    <option value="4">Sort by price: low to high</option>
+                                    <option value="5">Sort by price: high to low</option>
+                                </select>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront7.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront8.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront9.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront10.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront11.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront12.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-5">
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront8.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront9.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="vegetable_content image_bg1"><img src="images/productfront7.png"
+                                    class="rounded-top lady_finger_img packet_img " alt="" width="100%">
+                                <a href="#" style="text-decoration: none;"><i class="far fa-eye eye eye1"></i></a>
+                                <p class="text-danger text-center add_name"><b>LADIES FINGER 500g</b></p>
+                                <p class="text-center night_mode"><span class="night_mode"
+                                        style="font-weight: lighter; text-decoration: line-through;">$320</span>
+                                    &nbsp;
+                                    <big class="add_price"><b><i>$302</i></b></big>
+                                </p>
+                                <div class="text-center"><button
+                                        class="p-2 rounded-lg add_to_cart icon_bg add_to_cart_hov1">Add
+                                        To
+                                        Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+
+        <div class="about_us_block">
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 m-0 p-0">
+                    <img src="images/slider2.jpg" alt="" width="100%" height="300px">
+                </div>
+            </div>
+            <div class="row m-0 p-0 about_content">
+                <div class="col-lg-12 night_mode">
+                    <h3>ABOUT US</h3>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 mb-5 m-0 p-0">
+                    <p class="text-center p-3 product_background night_mode"><span class="mr-3"><a href="#"
+                                style="text-decoration: none;" class="home1">Home</a></span>/<span
+                            class="text-muted ml-3">About</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row m-0 p-0 mt-3">
+                <div class="col-1"></div>
+                <div class="col-lg-5 night_mode">
+                    <h2 class="">Best Offers & Best Deals In Our Mart!</h2> <br>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore <br> eu
+                        fugiat
+                        nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, <br> sunt in culpa qui officia
+                        deserunt
+                        mollit
+                        anim id est laborum. <br> <br>
+
+                        Sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure <br> dolor
+                        in
+                        reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla <br> ariatur in reprehenderit.
+                    </p>
+                    <button class="btn btn-danger pl-4 pr-4 p-3 rounded-lg"><b>View Our Product</b></button>
+                </div>
+                <div class="col-lg-6 mb-5">
+                    <img src="images/about5.jpg" class="rounded-lg" alt="" width="80%">
+                </div>
+            </div>
+            <div class="bg-light">
+                <div class="row m-0 p-0 mt-5 mb-5">
+                    <div class="col-lg-12 mt-5">
+                        <p class="text-center">
+                            <span
+                                class="text-danger"><small>&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;</small></span>
+                            <span class="h2"><b>Meet Our Team</b></span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- box-shadow:  0px 20px 20px rgb(189, 188, 188); -->
+
+                <div class="row m-0 p-0 mb-5 pb-5">
+                    <div class="col-2"></div>
+                    <div class="col-lg-2 bg-white p-0 ml-4 mb-5"
+                        style="box-shadow:  0px 10px 30px rgb(189, 188, 188);border-radius: 10px 10px 10px 10px;">
+                        <img src="images/about1.jpg" alt="" width="100%" style="border-radius: 10px 10px 0px 0px;">
+                        <div class="col-12 m-0 p-0 text-center">
+                            <a href="#"><i
+                                    class="fab fa-facebook-square rounded-circle p-2 social_clr product_background social_clr_hov1"></i></a>
+                            <a href="#"><i
+                                    class="fab fa-twitter-square rounded-circle p-2 social_clr product_background social_clr_hov2"></i></a>
+                            <a href="#"><i
+                                    class="fab fa-linkedin rounded-circle p-2 social_clr product_background social_clr_hov3"></i></a>
+                            <a href="#"><i
+                                    class="fab fa-whatsapp-square rounded-circle p-2 social_clr product_background social_clr_hov4"></i></a>
+                        </div>
+                        <p class="h4 text-center"><b>Olive Yew</b></p>
+                        <p class="text-center">Title Goes Here</p>
+                    </div>
+                    <div class="col-lg-2 bg-white p-0 ml-4 mb-5"
+                        style="box-shadow:  0px 10px 30px rgb(189, 188, 188);border-radius: 10px 10px 10px 10px;">
+                        <img src="images/about2.jpg" alt="" width="100%" style="border-radius: 10px 10px 0px 0px;">
+                        <div class="col-12 m-0 p-0 text-center">
+                            <a href="#"><i
+                                    class="fab fa-facebook-square rounded-circle p-2 social_clr product_background social_clr_hov1"></i></a>
+                            <a href="#"><i
+                                    class="fab fa-twitter-square rounded-circle p-2 social_clr product_background social_clr_hov2"></i></a>
+                            <a href="#"><i
+                                    class="fab fa-linkedin rounded-circle p-2 social_clr product_background social_clr_hov3"></i></a>
+                            <a href="#"><i
+                                    class="fab fa-whatsapp-square rounded-circle p-2 social_clr product_background social_clr_hov4"></i></a>
+                        </div>
+                        <p class="h4 text-center"><b>Aida Joe</b></p>
+                        <p class="text-center">Title Goes Here</p>
+                    </div>
+                    <div class="col-lg-2 bg-white p-0 ml-4 mb-5"
+                        style="box-shadow:  0px 10px 30px rgb(189, 188, 188);border-radius: 10px 10px 10px 10px;">
+                        <img src="images/about3.jpg" alt="" width="100%" style="border-radius: 10px 10px 0px 0px;">
+                        <div class="col-12 m-0 p-0 text-center">
+                            <a href="#"><i
+                                    class="fab fa-facebook-square rounded-circle p-2 social_clr product_background social_clr_hov1"></i></a>
+                            <a href="#"><i
+                                    class="fab fa-twitter-square rounded-circle p-2 social_clr product_background social_clr_hov2"></i></a>
+                            <a href="#"><i
+                                    class="fab fa-linkedin rounded-circle p-2 social_clr product_background social_clr_hov3"></i></a>
+                            <a href="#"><i
+                                    class="fab fa-whatsapp-square rounded-circle p-2 social_clr product_background social_clr_hov4"></i></a>
+                        </div>
+                        <p class="h4 text-center"><b>Teri Dac</b></p>
+                        <p class="text-center">Title Goes Here</p>
+                    </div>
+                    <div class="col-lg-2 bg-white p-0 ml-4 mb-5"
+                        style="box-shadow:  0px 10px 30px rgb(189, 188, 188);border-radius: 10px 10px 10px 10px;">
+                        <div><img src="images/about4.jpg" alt="" width="100%" style="border-radius: 10px 10px 0px 0px;">
+                            <div class="col-12 m-0 p-0 text-center">
+                                <a href="#"><i
+                                        class="fab fa-facebook-square rounded-circle p-2 social_clr product_background social_clr_hov1"></i></a>
+                                <a href="#"><i
+                                        class="fab fa-twitter-square rounded-circle p-2 social_clr product_background social_clr_hov2"></i></a>
+                                <a href="#"><i
+                                        class="fab fa-linkedin rounded-circle p-2 social_clr product_background social_clr_hov3"></i></a>
+                                <a href="#"><i
+                                        class="fab fa-whatsapp-square rounded-circle p-2 social_clr product_background social_clr_hov4"></i></a>
+                            </div>
+                            <p class="h4 text-center">Anton Bne</b></p>
+                            <p class="text-center">Title Goes Here</p>
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="row m-0 p-0 mb-5">
+                <div class="col-lg-12 mt-5 mb-3 night_mode">
+                    <h2 class="text-center">Are You Ready For Deals? Flat <span class="text-danger">30%
+                            Offer</span>
+                        on
+                        Mobiles</h2><br>
+                    <p class="text-muted text-center mb-5">Itaque earum rerum hic tenetur a sapiente delectus,
+                        ut
+                        aut
+                        reiciendis voluptatibus maiores alias consequatur aut <br> perferendis doloribus
+                        asperiores
+                        repellat.</p>
+                    <p class="text-center"><a href="#" style="text-decoration: none;" class="text-danger">SHOP
+                            NOW
+                            <span><big><b>&rightarrow;</b></big></span></a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog_post_block">
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 m-0 p-0">
+                    <img src="images/slider2.jpg" alt="" width="100%" height="300px">
+                </div>
+            </div>
+            <div class="row m-0 p-0 blog_post_content">
+                <div class="col-lg-12 night_mode">
+                    <h3>BLOG POSTS</h3>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 mb-5 m-0 p-0 ">
+                    <p class="text-center p-3 product_background night_mode"><span class="mr-3"><a href="#"
+                                style="text-decoration: none;" class="home1">Home</a></span><span class="">/</span><span
+                            class="text-muted ml-3">Blog Posts</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row m-0 p-0 mb-5">
+                <div class="col-1"></div>
+                <div class="col-lg-5 mb-3">
+                    <img src="images/blog1.jpg" alt="" class="rounded-lg" width="100%">
+                </div>
+                <div class="col-lg-5 night_mode">
+                    <p class="h2 mt-3"><a href="#" style="text-decoration: none;"><b>At vero eos et
+                                accusamus</b></a>
+                    </p>
+                    <p class=""><span class="text-danger"><i class="fas fa-user mr-2"></i></span>MAUREE<span
+                            class="text-danger"><i class="fas fa-clock ml-4 mr-2"></i></span>7:00 PM - 8:00
+                        PM<span class="text-danger"><i class="fas fa-calendar-alt ml-4 mr-2"></i></span>OCT 10
+                    </p><br>
+                    <p class="">Sed luctus orci sit amet tempor luctus. Nullam non felis massa. Phasellus vitae
+                        <br> fringilla sapien. <br><br>
+                        Sed luctus orci sit amet tempor luctus. Nullam non felis massa. Phasellus vitae <br>
+                        fringilla
+                        sapien, quis dictum mi. Quisque consectetur egestas.Lorem ipsum <br> dolor sit amet,
+                        consectetur
+                        adipiscing elit.
+                    </p><br>
+                    <button class="btn btn-danger pl-4 pr-4 p-2 text-white rounded-lg"><b>Read More</b></button>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-1"></div>
+                <div class="col-lg-10 night_mode mb-3">
+                    <hr>
+                </div>
+                <div class="col-1"></div>
+            </div>
+
+            <div class="row m-0 p-0 mt-5 mb-5">
+                <div class="col-1"></div>
+                <div class="col-lg-5 night_mode">
+                    <p class="h2 mt-3"><a href="#" style="text-decoration: none;"><b>Et iusto odio
+                                dignissimos</b></a>
+                    </p>
+                    <p class=""><span class="text-danger"><i class="fas fa-user mr-2"></i></span>ALLIEES<span
+                            class="text-danger"><i class="fas fa-clock ml-4 mr-2"></i></span>7:00 PM - 8:00
+                        PM<span class="text-danger"><i class="fas fa-calendar-alt ml-4 mr-2"></i></span>OCT 12
+                    </p><br>
+                    <p class="">Sed luctus orci sit amet tempor luctus. Nullam non felis massa. Phasellus vitae
+                        <br> fringilla sapien. <br><br>
+                        Sed luctus orci sit amet tempor luctus. Nullam non felis massa. Phasellus vitae <br>
+                        fringilla
+                        sapien, quis dictum mi. Quisque consectetur egestas.Lorem ipsum <br> dolor sit amet,
+                        consectetur
+                        adipiscing elit.
+                    </p><br>
+                    <button class="btn btn-danger pl-4 pr-4 p-2 text-white rounded-lg"><b>Read More</b></button>
+                </div>
+                <div class="col-lg-5 mb-3">
+                    <img src="images/blog2.jpg" alt="" class="rounded-lg" width="100%">
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-1"></div>
+                <div class="col-lg-10 night_mode mb-3">
+                    <hr>
+                </div>
+                <div class="col-1"></div>
+            </div>
+
+            <div class="row m-0 p-0 mt-5 mb-5">
+                <div class="col-1"></div>
+                <div class="col-lg-5 mb-3">
+                    <img src="images/blog3.jpg" alt="" class="rounded-lg" width="100%">
+                </div>
+                <div class="col-lg-5 night_mode">
+                    <p class="h2 mt-3"><a href="#" style="text-decoration: none;"><b>Deleniti atque
+                                corrupti</b></a>
+                    </p>
+                    <p class=""><span class="text-danger"><i class="fas fa-user mr-2"></i></span>JOHNSON<span
+                            class="text-danger"><i class="fas fa-clock ml-4 mr-2"></i></span>7:00 PM - 8:00
+                        PM<span class="text-danger"><i class="fas fa-calendar-alt ml-4 mr-2"></i></span>OCT 14
+                    </p><br>
+                    <p class="">Sed luctus orci sit amet tempor luctus. Nullam non felis massa. Phasellus vitae
+                        <br> fringilla sapien. <br><br>
+                        Sed luctus orci sit amet tempor luctus. Nullam non felis massa. Phasellus vitae <br>
+                        fringilla
+                        sapien, quis dictum mi. Quisque consectetur egestas.Lorem ipsum <br> dolor sit amet,
+                        consectetur
+                        adipiscing elit.
+                    </p><br>
+                    <button class="btn btn-danger pl-4 pr-4 p-2 text-white rounded-lg"><b>Read More</b></button>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-1"></div>
+                <div class="col-lg-10 night_mode mb-3">
+                    <hr>
+                </div>
+                <div class="col-1"></div>
+            </div>
+
+            <div class="row m-0 p-0 mt-5 mb-5">
+                <div class="col-1"></div>
+                <div class="col-lg-5 night_mode">
+                    <p class="h2 mt-3"><a href="#" style="text-decoration: none;"><b>Id est laborum et
+                                dolorum</b></a>
+                    </p>
+                    <p class=""><span class="text-danger"><i class="fas fa-user mr-2"></i></span>FURNIEW<span
+                            class="text-danger"><i class="fas fa-clock ml-4 mr-2"></i></span>7:00 PM - 8:00
+                        PM<span class="text-danger"><i class="fas fa-calendar-alt ml-4 mr-2"></i></span>OCT 16
+                    </p><br>
+                    <p class="">Sed luctus orci sit amet tempor luctus. Nullam non felis massa. Phasellus vitae
+                        <br> fringilla sapien. <br><br>
+                        Sed luctus orci sit amet tempor luctus. Nullam non felis massa. Phasellus vitae <br>
+                        fringilla
+                        sapien, quis dictum mi. Quisque consectetur egestas.Lorem ipsum <br> dolor sit amet,
+                        consectetur
+                        adipiscing elit.
+                    </p><br>
+                    <button class="btn btn-danger pl-4 pr-4 p-2 text-white rounded-lg"><b>Read More</b></button>
+                </div>
+                <div class="col-lg-5 mb-5">
+                    <img src="images/blog4.jpg" alt="" class="rounded-lg" width="100%">
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row m-0 p-0 mb-5">
+                <div class="col-lg-12">
+                    <p class="text-center mb-5"><span class="p-3"><i class="fas fa-angle-double-left text-muted"
+                                style="font-size: 12px;"></i></span><span
+                            class="pl-3 pr-3 p-2 rounded-circle bg-primary text-white" style="cursor: pointer;">1</span>
+                        <span class="pl-3 pr-3 p-2 rounded-circle bg-primary text-white"
+                            style="cursor: pointer;">2</span> <span
+                            class="pl-3 pr-3 p-2 rounded-circle bg-primary text-white" style="cursor: pointer;">3</span>
+                        <span class="pl-3 pr-3 p-2 bg-primary text-white rounded-circle"><i
+                                class="fas fa-angle-double-right" style="font-size: 12px;"></i></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog_single_block">
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 m-0 p-0">
+                    <img src="images/slider2.jpg" alt="" width="100%" height="300px">
+                </div>
+            </div>
+            <div class="row m-0 p-0 blog_post_content">
+                <div class="col-lg-12 night_mode">
+                    <h3>BLOG SINGLE</h3>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 mb-5 m-0 p-0 ">
+                    <p class="text-center p-3 product_background night_mode"><span class="mr-3"><a href="#"
+                                style="text-decoration: none;" class="home1">Home</a></span><span class="">/</span><span
+                            class="text-muted ml-3">Blog Single</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row m-0 p-0 mb-5">
+                <div class="col-2"></div>
+                <div class="col-lg-8 m-0 p-0 night_mode">
+                    <img src="images/blog-single1.jpg" alt="" width="100%" class="rounded-lg">
+                    <a href="#" class="h4" style="text-decoration: none;">Groceries</a>
+                    <p class="h2">At vero eos et accusamus et iusto odio dignissimos</p>
+                    <p class="text-muted" style="font-size: 18px;">Lorem ipsum dolor sit amet,Ea consequuntur
+                        illum
+                        facere aperiam sequi optio consectetur.Ea
+                        consequuntur illum facere <br> aperiam sequi optio consectetur adipisicing elitFuga,
+                        suscipit
+                        totam
+                        animi consequatur saepe blanditiis.Lorem ipsum dolor sit <br> amet,Ea consequuntur illum
+                        facere
+                        aperiam sequi optio consectetur adipisicing elit..Lorem ipsum, dolor sit amet
+                        consectetur
+                        <br>
+                        adipisicing elit. At, corrupti odit? At iure facere, porro repellat officia quas,
+                        dolores
+                        magnam
+                        assumenda soluta odit harum <br> voluptate inventore ipsa maiores fugiat accusamus eos
+                        nulla.
+                        Iure
+                        voluptatibus explicabo officia. <br><br>
+
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. At, corrupti odit? At iure
+                        facere,
+                        porro repellat officia quas, dolores <br> magnam assumenda soluta odit harum voluptate
+                        inventore
+                        ipsa
+                        maiores fugiat accusamus eos nulla. Iure voluptatibus <br> explicabo officia.
+                    </p>
+                    <blockquote class="blockquote mt-4 mb-4 p-5 text-muted"
+                        style="box-shadow: 0px 5px 2px rgb(210, 210, 210); border-left: 3px solid red;font-weight: 600;">
+                        "Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio
+                        consectetur.Ea
+                        consequuntur illum facere aperiam sequi optio consectetur adipisicing elitFuga, suscipit
+                        totam
+                        animi consequatur."
+                        <footer class="blockquote-footer text-danger font-weight-bold mt-4">Alexander tony
+                        </footer>
+                    </blockquote>
+                    <p class="text-muted" style="font-size: 18px;">Excepteur sint occaecat non proident, sunt in
+                        culpa
+                        quis. Phasellus lacinia id erat eu
+                        ullamcorper. Nunc id ipsum fringilla, <br> gravida felis vitae. Phasellus lacinia id,
+                        sunt
+                        in
+                        culpa
+                        quis. . <br><br>
+
+                        Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu
+                        ullamcorper. Nunc id ipsum fringilla, <br> gravida felis vitae. Phasellus lacinia id,
+                        sunt
+                        in
+                        culpa
+                        quis. .</p>
+                    <div class="row mb-5 mt-4">
+                        <div class="col-lg-6">
+                            <a href="#"><img src="images/blog3.jpg" alt="" width="100%"
+                                    style="border-radius: 10px;"></a>
+                        </div>
+                        <div class="col-lg-6">
+                            <a href="#"><img src="images/blog1.jpg" alt="" width="100%"
+                                    style="border-radius: 10px;"></a>
+                        </div>
+                    </div>
+                    <p class="text-muted" style="font-size: 18px;">Vivamus a ligula quam. Ut blandit eu leo non
+                        suscipit. Anna Delpan In interdum ullamcorper dolor
+                        eu mattis.Nulla quis lorem <br> neque,Nulla quis lorem neque, mattis venenatis lectus.
+                        Delpan
+                        Deo In
+                        interdum ullamcorper dolor eu mattis.Nulla quis lorem <br> neque, mattis venenatis
+                        lectus.
+                        Duis
+                        feugiat tortor sed.Nulla quis lorem neque, mattis venenatis lectus. In interdum
+                        ullamcorper
+                        <br>
+                        dolor eu mattis.Nulla quis lorem neque <br><br>
+
+                        Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu
+                        ullamcorper. Nunc id ipsum fringilla, <br> gravida felis vitae. Phasellus lacinia id,
+                        sunt
+                        in
+                        culpa
+                        quis. . <br><br>
+
+                        Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu
+                        ullamcorper. Nunc id ipsum fringilla, <br> gravida felis vitae. Phasellus lacinia id,
+                        sunt
+                        in
+                        culpa
+                        quis..
+                    </p>
+                    <p class="h2 mb-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    <p class="text-muted mb-5" style="font-size: 18px;">A ligula quam. Ut blandit eu leo non
+                        suscipit.
+                        Anna Delpan In interdum ullamcorper dolor eu
+                        mattis.Nulla quis lorem <br> neque,Nulla quis lorem neque, mattis venenatis lectus.
+                        Delpan
+                        Deo
+                        In
+                        interdum ullamcorper dolor eu mattis.Nulla quis lorem <br> neque, mattis venenatis
+                        lectus.
+                        Duis
+                        feugiat tortor sed.Nulla quis lorem neque, mattis venenatis lectus. In interdum
+                        ullamcorper
+                        <br>
+                        dolor eu mattis.Nulla quis lorem neque
+                    </p>
+                    <div class="mb-5">
+                        <span class="h4">Share this post :</span>
+                        <a href="#"><i class="fab fa-facebook-square rounded-circle p-2"
+                                style="background-color: rgb(43, 43, 108);color: white;"></i>
+                        </a>
+                        <a href="#"><i class="fab fa-twitter-square rounded-circle p-2 bg-primary"
+                                style="color: white;"></i>
+                        </a>
+                        <a href="#"><i class="fab fa-linkedin rounded-circle p-2"
+                                style="background-color: rgb(102, 102, 219); color: white;"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+                    <div>
+                        <i class="fas fa-arrow-left text-danger"></i> <a href="#" class="text-danger"
+                            style="text-decoration: none;">Previous Post</a>
+                    </div>
+                    <div class="mb-5">
+                        <hr>
+                    </div>
+                    <p class="h4 mb-3">Comments</p>
+                    <div>
+                        <div class="row border mb-4 pl-4 pr-4 pt-4 pb-2">
+                            <div class="col-2 m-0 p-0">
+                                <img src="images/blog_single2.jpg" alt="" class="rounded-circle" width="60%">
+                            </div>
+                            <div class="col-10 m-0 p-0">
+                                <p class="font-weight-bold" style="font-size: 18px;">Alexander Smith</p>
+                                <p style="font-size: 18px;"><span class="mr-4">Oct 10, 2021 - 10:02
+                                        pm</span><span class="text-danger font-weight-bold"><i class="fas fa-reply"></i>
+                                        Reply</span>
+                                </p>
+                                <p class="text-muted" style="font-size: 18px;">Lorem ipsum dolor sit amet
+                                    consectetur,
+                                    adipisicing elit. Repellat, hic reprehenderit eum cupiditate deleniti....
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row border pl-4 pr-4 pt-4 pb-2 mb-5">
+                            <div class="col-2 m-0 p-0">
+                                <img src="images/blog_single3.jpg" alt="" class="rounded-circle" width="60%">
+                            </div>
+                            <div class="col-10 m-0 p-0">
+                                <p class="font-weight-bold" style="font-size: 18px;">Elizabeth Ker</p>
+                                <p style="font-size: 18px;"><span class="mr-4">Oct 11, 2021 - 12:30
+                                        pm</span><span class="text-danger font-weight-bold"><i class="fas fa-reply"></i>
+                                        Reply</span>
+                                </p>
+                                <p class="text-muted" style="font-size: 17px;">Ea consequuntur illum facere
+                                    aperiam
+                                    sequi optio consectetur adipisicing elitFuga, suscipit totam animi
+                                    consequatur.....
+                                </p>
+                                <div class="row">
+                                    <div class="col-2 m-0 p-0 mt-3">
+                                        <img src="images/blog_single4.jpg" alt="" class="rounded-circle" width="70%">
+                                    </div>
+                                    <div class="col-10 m-0 p-0 mt-3">
+                                        <p class="font-weight-bold" style="font-size: 18px;">Lisa Lindey</p>
+                                        <p style="font-size: 18px;"><span class="mr-4">Oct 11, 2021 - 14:20
+                                                pm</span><span class="text-danger font-weight-bold"><i
+                                                    class="fas fa-reply"></i> Reply</span></p>
+                                        <p class="text-muted" style="font-size: 17px;">At vero eos et accusamus
+                                            et
+                                            iusto
+                                            odio dignissimos ducimus qui blanditiis corrupti quos dolores
+                                            et.....
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="h4">Add a Comment</p>
+                    <div class="row mb-4">
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="Your Name*" class="p-2 border border-muted"
+                                style="width: 100%; border-radius: 10px; background-color: rgb(241, 241, 241); border: none;">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="email" placeholder="Your Email*" class="p-2 border border-muted"
+                                style="width: 100%; border-radius: 10px; background-color: rgb(241, 241, 241); border: none;">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <textarea name="" id="" cols="" rows="5" placeholder="Your Comment*"
+                                class="p-2 border border-muted"
+                                style="width: 100%; border-radius: 10px; background-color: rgb(241, 241, 241); border: none;"></textarea>
+                        </div>
+                    </div>
+                    <button class="btn btn-danger pl-4 pr-4 p-2 rounded-lg font-weight-bold">Post
+                        Comment</button>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+
+        <div class="single_page_block">
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 m-0 p-0">
+                    <img src="images/slider2.jpg" alt="" width="100%" height="300px">
+                </div>
+            </div>
+            <div class="row m-0 p-0 contact_content">
+                <div class="col-lg-12 night_mode">
+                    <h3>SINGLE PAGE</h3>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 mb-5 m-0 p-0 ">
+                    <p class="text-center p-3 product_background night_mode"><span class="mr-3"><a href="#"
+                                style="text-decoration: none;" class="home1">Home</a></span><span class="">/</span><span
+                            class="text-muted ml-3">Single Page</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-4 m-0 p-0 mt-5 text-center">
+                    <img src="images/single1.png" alt="">
+                </div>
+                <div class="col-lg-7 m-0 p-0 text-left night_mode">
+                    <p class="h3">Fortune Everyday Basmati Rice</p>
+                    <p class="text-primary mb-4" style="font-size: 30px;">&star;&star;&star;&star;&star;</p>
+                    <p class="text-primary"><i>Description</i></p>
+                    <p class="mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu
+                        fugiat nulla
+                        pariatur. Excepteur <br> sint occaecat cupidatat non proident. Nemo enim ipsam
+                        voluptatem
+                        quia
+                        voluptas sit aspernatur aut odit aut <br> fugit, sed quia consequuntur magni dolores eos
+                        qui
+                        ratione
+                        voluptatem sequi nesciunt.
+                    </p>
+                    <p class="text-primary mb-3">QUALITY:</p>
+                    <p class="mb-4"><span class="p-2 pl-3 pr-3 mr-2 border border-muted bg-light"><a href="#"
+                                style="text-decoration: none; color: black;">&minus;</a></span><span
+                            class="p-2 pl-3 pr-3 mr-2 border border-muted text-muted"
+                            style="background-color: rgb(225, 225, 225);">1</span><span
+                            class="p-2 pl-3 pr-3 border border-muted bg-light"><a href="#"
+                                style="text-decoration: none; color: black;">&plus;</a></span></p>
+                    <p class="text-primary mb-2">QUANTITY:</p>
+                    <p class="mb-3"><input type="checkbox" id="five" style="cursor: pointer;"><label for="five"
+                            style="cursor: pointer;">5kg</label> <input type="checkbox" id="ten"
+                            style="cursor: pointer;"><label for="ten" style="cursor: pointer;">10kg</label>
+                        <input type="checkbox" id="fifteen" style="cursor: pointer;"><label for="fifteen"
+                            style="cursor: pointer;">15kg</label>
+                    </p>
+                    <p class=" night_mode mb-3"><span class="night_mode"
+                            style="font-weight: lighter; text-decoration: line-through gray; color: gray;"><small>$460</small></span>
+                        &nbsp;
+                        <b><i>$450</i></b>
+                    </p>
+                    <div class="mb-5"><button class="p-1 rounded-lg add_to_cart add_to_cart_hov11">Add
+                            To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faqs_block">
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 m-0 p-0">
+                    <img src="images/slider2.jpg" alt="" width="100%" height="300px">
+                </div>
+            </div>
+            <div class="row m-0 p-0 contact_content">
+                <div class="col-lg-12 night_mode">
+                    <h3>FAQ'S</h3>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 mb-5 m-0 p-0 ">
+                    <p class="text-center p-3 product_background night_mode"><span class="mr-3"><a href="#"
+                                style="text-decoration: none;" class="home1">Home</a></span><span class="">/</span><span
+                            class="text-muted ml-3">FAQ's</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-3"></div>
+                <div class="col-7 text-left night_mode">
+                    <p class="h5 mb-4">1. Excepteur sint occaecat cupidatat non proident ?</p>
+                    <p class="text-muted mb-5"><b>Ans.</b> But I must explain to you how all this mistaken idea
+                        of
+                        denouncing pleasure and praising
+                        pain was born and I <br> will give you a complete account of the system, and expound the
+                        actual
+                        teachings of the great explorer of the truth, <br> the master-builder of human
+                        happiness. No
+                        one
+                        rejects, dislikes, or avoids pleasure itself, because it is pleasure.
+                    </p>
+                    <p class="h5 mb-4">2. Quis nostrum exercitationem ullam corporis suscipit ?</p>
+                    <p class="text-muted mb-5"><b>Ans.</b> But I must explain to you how all this mistaken idea
+                        of
+                        denouncing pleasure and praising
+                        pain was born and I <br> will give you a complete account of the system, and expound the
+                        actual
+                        teachings of the great explorer of the truth, <br> the master-builder of human
+                        happiness. No
+                        one
+                        rejects, dislikes, or avoids pleasure itself, because it is pleasure.
+                    </p>
+                    <p class="h5 mb-4">3. Nemo enim ipsam voluptatem quia voluptas sit ?</p>
+                    <p class="text-muted mb-5"><b>Ans.</b> But I must explain to you how all this mistaken idea
+                        of
+                        denouncing pleasure and praising
+                        pain was born and I <br> will give you a complete account of the system, and expound the
+                        actual
+                        teachings of the great explorer of the truth, <br> the master-builder of human
+                        happiness. No
+                        one
+                        rejects, dislikes, or avoids pleasure itself, because it is pleasure.
+                    </p>
+                    <p class="h5 mb-4">4. Ut enim ad minima veniam, quis nostrum exercitationem ?</p>
+                    <p class="text-muted mb-5"><b>Ans.</b> But I must explain to you how all this mistaken idea
+                        of
+                        denouncing pleasure and praising
+                        pain was born and I <br> will give you a complete account of the system, and expound the
+                        actual
+                        teachings of the great explorer of the truth, <br> the master-builder of human
+                        happiness. No
+                        one
+                        rejects, dislikes, or avoids pleasure itself, because it is pleasure.
+                    </p>
+                    <p class="h5 mb-4">5. Quis autem vel eum iure reprehenderit qui ?</p>
+                    <p class="text-muted mb-5"><b>Ans.</b> But I must explain to you how all this mistaken idea
+                        of
+                        denouncing pleasure and praising
+                        pain was born and I <br> will give you a complete account of the system, and expound the
+                        actual
+                        teachings of the great explorer of the truth, <br> the master-builder of human
+                        happiness. No
+                        one
+                        rejects, dislikes, or avoids pleasure itself, because it is pleasure.
+                    </p>
+                    <p class="h5 mb-4">6. Sed ut perspiciatis unde omnis iste natus error sit ?</p>
+                    <p class="text-muted mb-5"><b>Ans.</b> But I must explain to you how all this mistaken idea
+                        of
+                        denouncing pleasure and praising
+                        pain was born and I <br> will give you a complete account of the system, and expound the
+                        actual
+                        teachings of the great explorer of the truth, <br> the master-builder of human
+                        happiness. No
+                        one
+                        rejects, dislikes, or avoids pleasure itself, because it is pleasure.
+                    </p>
+                    <p class="h5 mb-4">7. Nam libero tempore, cum soluta nobis est ?</p>
+                    <p class="text-muted mb-5"><b>Ans.</b> But I must explain to you how all this mistaken idea
+                        of
+                        denouncing pleasure and praising
+                        pain was born and I <br> will give you a complete account of the system, and expound the
+                        actual
+                        teachings of the great explorer of the truth, <br> the master-builder of human
+                        happiness. No
+                        one
+                        rejects, dislikes, or avoids pleasure itself, because it is pleasure.
+                    </p>
+                    <p class="h5 mb-4">8. At vero eos et accusamus et iusto odio dignissimos ?</p>
+                    <p class="text-muted mb-5"><b>Ans.</b> But I must explain to you how all this mistaken idea
+                        of
+                        denouncing pleasure and praising
+                        pain was born and I <br> will give you a complete account of the system, and expound the
+                        actual
+                        teachings of the great explorer of the truth, <br> the master-builder of human
+                        happiness. No
+                        one
+                        rejects, dislikes, or avoids pleasure itself, because it is pleasure.
+                    </p>
+                    <p class="h5 mb-4">9. Itaque earum rerum hic tenetur a sapiente delectus ?</p>
+                    <p class="text-muted mb-5"><b>Ans.</b> But I must explain to you how all this mistaken idea
+                        of
+                        denouncing pleasure and praising
+                        pain was born and I <br> will give you a complete account of the system, and expound the
+                        actual
+                        teachings of the great explorer of the truth, <br> the master-builder of human
+                        happiness. No
+                        one
+                        rejects, dislikes, or avoids pleasure itself, because it is pleasure.
+                    </p>
+                    <p class="h5 mb-4">10. vel illum qui dolorem eum fugiat quo voluptas nulla ?</p>
+                    <p class="text-muted mb-5"><b>Ans.</b> But I must explain to you how all this mistaken idea
+                        of
+                        denouncing pleasure and praising
+                        pain was born and I <br> will give you a complete account of the system, and expound the
+                        actual
+                        teachings of the great explorer of the truth, <br> the master-builder of human
+                        happiness. No
+                        one
+                        rejects, dislikes, or avoids pleasure itself, because it is pleasure.
+                    </p>
+                    <p class="h5 mb-4">11. Ut enim ad minima veniam, quis nostrum exercitationem ?</p>
+                    <p class="text-muted mb-5"><b>Ans.</b> But I must explain to you how all this mistaken idea
+                        of
+                        denouncing pleasure and praising
+                        pain was born and I <br> will give you a complete account of the system, and expound the
+                        actual
+                        teachings of the great explorer of the truth, <br> the master-builder of human
+                        happiness. No
+                        one
+                        rejects, dislikes, or avoids pleasure itself, because it is pleasure.
+                    </p>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+
+        <div class="contact_us_block">
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 m-0 p-0">
+                    <img src="images/slider2.jpg" alt="" width="100%" height="300px">
+                </div>
+            </div>
+            <div class="row m-0 p-0 contact_content">
+                <div class="col-lg-12 night_mode">
+                    <h3>CONTACT US</h3>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 mb-5 m-0 p-0 ">
+                    <p class="text-center p-3 product_background night_mode"><span class="mr-3"><a href="#"
+                                style="text-decoration: none;" class="home1">Home</a></span><span class="">/</span><span
+                            class="text-muted ml-3">Contact Us</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-1"></div>
+                <div class="col-lg-5 night_mode">
+                    <h2 class=""><big><b>Contact Info</b></big></h2><br>
+                    <p class="text-big mb-5">We enjoy discussing new projects and design challenges.
+                        Please<br>share
+                        as
+                        much info, as possible so we can get the most out of our <br>first catch-up.</p>
+                    <div class="col-lg-12 col-10 m-0 p-0 night_mode">
+                        <i class="fas fa-map-marker-alt rounded-circle mb-2 location text-danger"
+                            style="padding: 10px;"></i> London
+                        235 Terry,
+                        10001
+                    </div>
+                    <div class="col-12 m-0 p-0 ">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-phone-alt p-2 rounded-circle mb-2 location text-danger"></i>
+                            ++44-000-888-999</a>
+                    </div>
+                    <div class="col-12 m-0 p-0 mb-5">
+                        <i class="fas fa-envelope p-2 rounded-circle mb-2 location text-danger"></i><a href="#"
+                            style="text-decoration: none;" class="text_color night_mode"> info@example.com</a>
+                    </div>
+                    <div class="col-12 m-0 p-0">
+                        <p class="h5 mb-4 night_mode">Follow Us</p>
+                        <a href="#"><i class="fab fa-facebook-square mr-3 contact_icon"
+                                style="font-size: 30px;"></i></a>
+                        <a href="#"><i class="fab fa-twitter-square mr-3 contact_icon"
+                                style="font-size: 30px;"></i></a>
+                        <a href="#"><i class="fab fa-linkedin mr-3 contact_icon"
+                                style="font-size: 30px;"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp-square contact_icon"
+                                style="font-size: 30px;"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" placeholder="Your Name*"
+                        class="p-3 pl-3 contact_input product_background border border-light"><br><br>
+                    <input type="email" placeholder="Your Email"
+                        class="p-3 pl-3 contact_input product_background border border-light"><br><br>
+                    <input type="text" placeholder="Subject*"
+                        class="p-3 pl-3 contact_input product_background border border-light"><br><br>
+                    <input type="url" placeholder="Website URL*"
+                        class="p-3 pl-3 contact_input product_background border border-light"><br><br>
+                    <textarea name="" placeholder="Type your message here*" id="" cols="25" rows="5"
+                        class="pl-3 pt-3 contact_input product_background border border-light"></textarea><br><br>
+                    <button class="btn send_message"><b>Send Message</b></button>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-lg-12 m-0 p-0">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29887.649258165897!2d78.82057405752148!3d20.548974682883127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd3654cef92ddf1%3A0x3d7dbcd4848f3ce!2sHinganghat%2C%20Maharashtra%20442301!5e0!3m2!1sen!2sin!4v1717073833647!5m2!1sen!2sin"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="row newsletter m-0 p-5">
+            <div class="col-lg-6">
+                <div class="row m-0 p-0">
+                    <div class="col-lg-2 col-sm-0"></div>
+                    <div class="col-lg-10">
+                        <p class="h3 text-white"><big><b>Newsletter</b></big></p>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-lg-2 col-sm-0"></div>
+                    <div class="col-lg-10">
+                        <p class="text-white">Excepteur sint occaecal cupidatal non proident,sunt.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 m-0 p-0">
+                <input type="email" placeholder="Email" class="email border border-primary"><a href="#" class=""><i
+                        class="fas fa-paper-plane plane"></i></a>
+            </div>
+        </div>
+        <br><br>
+
+        <div class="row m-0 p-0">
+            <div class="col-1"></div>
+            <div class="col-lg-2 col-5">
+                <div class="row ">
+                    <div class="col-lg-12 night_mode">
+                        <h3 style="border-bottom: 3px solid blue; width: 60px;">CONTACT</h3>
+                    </div>
+                </div>
+                <br>
+                <div class="row contact">
+                    <div class="col-lg-12 col-10 m-0 p-0 text-left night_mode">
+                        <i class="fas fa-map-marker-alt rounded-circle mb-4 location" style="padding: 10px;"></i>
+                        London
+                        235 Terry,
+                        10001
+                    </div>
+                </div>
+                <div class="row contact">
+                    <div class="col-12 m-0 p-0 text-left ">
+                        <i class="fas fa-envelope p-2 rounded-circle mb-4 location"></i><a href="#"
+                            style="text-decoration: none;" class="text_color night_mode"> info@example.com</a>
+                    </div>
+                </div>
+                <div class="row contact">
+                    <div class="col-12 m-0 p-0 text-left ">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-phone-alt p-2 rounded-circle location"></i> ++44-000-888-999</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-lg-2 col-5">
+                <div class="row">
+                    <div class="col-lg-12 night_mode">
+                        <h3 style="border-bottom: 3px solid blue; width: 60px;">INFORMATION</h3>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-angle-right"></i> About Us</a>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-angle-right"></i> Contact Us</a>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-angle-right"></i> Shortcodes</a>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-angle-right"></i> FAQ's</a>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-angle-right"></i> Special Products</a> <br><br><br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-lg-2 col-5">
+                <div class="row">
+                    <div class="col-lg-12 night_mode">
+                        <h3 style="border-bottom: 3px solid blue; width: 60px;">CATEGORY</h3>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-angle-right"></i> Fruits & Vegetables</a>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-angle-right"></i> Meats & Seafood</a>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-angle-right"></i> Bakery & Pastry</a>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-angle-right"></i> Beverages</a>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-angle-right"></i> Breakfast & Dairy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-lg-2 col-5">
+                <div class="row">
+                    <div class="col-lg-12 night_mode">
+                        <h3 style="border-bottom: 3px solid blue; width: 65px;">PROFILE</h3>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-12 ">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-angle-right"></i> Home</a>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-12 ">
+                        <a href="#" style="text-decoration: none;" class="text_color night_mode"><i
+                                class="fas fa-angle-right"></i> Today's Deals</a>
+                    </div>
+                </div><br><br>
+                <div class="row">
+                    <div class="col-12">
+                        <h5 class="follow_us">Follow Us</h5>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-12 m-0 p-0">
+                        <a href="#"><i
+                                class="fab fa-facebook-square rounded-circle p-2 social_clr product_background"></i></a>
+                        <a href="#"><i
+                                class="fab fa-twitter-square rounded-circle p-2 social_clr product_background"></i></a>
+                        <a href="#"><i
+                                class="fab fa-linkedin rounded-circle p-2 social_clr product_background"></i></a>
+                        <a href="#"><i
+                                class="fab fa-whatsapp-square rounded-circle p-2 social_clr product_background"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="bg-light line1">
+        <hr class="bg-dark line2"><br>
+        <div class="row m-0 p-0">
+            <div class="col-12 text-center night_mode">
+                &copy; 2021 Grocery Mart. All rights reserved. Design by <a href="#" style="text-decoration: none;"
+                    class="w3layouts">W3Layouts</a>
+            </div>
+        </div><br>
+    </div>
+    <script>
+        const header = document.querySelector(".nav1");
+        const sticky1 = header.offsetTop;
+        const moon = document.querySelector(".moon");
+        const mooncolor = moon.offsetTop;
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > sticky1) {
+                header.classList.remove("nav1");
+                header.classList.add("sticky_morning");
+                moon.classList.remove("moon")
+                moon.classList.add("sticky_morning_moon")
+            }
+            else {
+                header.classList.remove("sticky_morning");
+                header.classList.add("nav1");
+                moon.classList.add("moon")
+                moon.classList.remove("sticky_morning_moon")
+            }
+        });
+
+        // function night_mode() {
+        //     const header = document.querySelector(".nav1");
+        //     const sticky1 = header.offsetTop;
+        //     const moon = document.querySelector(".moon");
+        //     const mooncolor = moon.offsetTop;
+        //     window.addEventListener('scroll', () => {
+        //         if (window.pageYOffset > sticky1) {
+        //             header.classList.remove("nav1");
+        //             header.classList.add("sticky_night");
+        //             moon.classList.remove("moon")
+        //             moon.classList.add("sticky_night_moon")
+        //         }
+        //         else {
+        //             header.classList.remove("sticky_night");
+        //             header.classList.add("nav1");
+        //         }
+        //     });
+
+        // }
+
+        var carousel = document.querySelectorAll(".carousel .carousel-item");
+        carousel.forEach((e) => {
+            const slide = 4;
+            let next = e.nextElementSibling;
+            for (var i = 0; i < slide; i++) {
+                if (!next) {
+                    next = slide[0]
+                }
+                let clonechild = next.cloneNode(true)
+                e.appendChild(clonechild.children[0])
+                next = next.nextElementSibling
+            }
+        })
+
+        
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
